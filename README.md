@@ -1,46 +1,48 @@
-# Getting Started with Create React App
+# Restaurant Search UI
+This is a restaurant search front end that utilizes a laravel backend to leverages the Yelp api
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Installation
+After cloning this repository, open your terminal and move to the root directory of the repository
 
-## Available Scripts
+```ssh
+cd ./restaurantfe-v2
+```
+After which, you then install all dependencies using this command
+```ssh
+npm install
+```
+After dependencies have been installed, you can choose to first run all the unit tests
+to make sure everything is running fine
+```ssh
+npm run test
+```
 
-In the project directory, you can run:
+After everything seems okay with the tests, you can then proceed to build the application
+```ssh
+npm run build
+```
+After running the command above, a new directory ``./build`` will be available in your root directory
+that you can deploy on a server of your choice. but in the event you don't have one
+installed, you can easily set up one in node by installing one using the following command
+```ssh
+npm install -g serve
+```
 
-### `npm start`
+then assuming you are still running the application within the same repository,
+you can then run this command to run the application
+```ssh
+serve -s build
+```
+the ``build`` in the command refers to the directory you are serving.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Prerequisites
+ - **Running backend** : You should have a running backend that this UI can access using Restful services.
+Depending on where the backend has been set up, you should adjust the ``baseUrl`` in file ``./src/config/clientHandler.ts`` to point to it.
+The backend repo can be found on this github repo: https://github.com/sewalups/restaurant-search
+ - **Node and Npm**: Make sure your platform has the latest version of node installed
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+>Note: Make sure the prerequisites have been set up before building your application. possibly after cloning the application
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### Author
+Sewalu Mukasa Steven

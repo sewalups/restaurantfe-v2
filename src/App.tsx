@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {createBrowserRouter, RouterProvider} from "react-router-dom";
+import React from "react";
+import RestaurantsPage from "./pages/RestaurantsPage";
+import SingleRestaurantPage from "./pages/SingleRestaurantPage";
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <RestaurantsPage />
+  },
+  {
+    path: "/single/:id",
+    element: <SingleRestaurantPage />
+  },
+]);
 
-function App() {
+const App:React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+      <div className="w-screen h-screen">
+        <div className="h-16 bg-purple-800 w-full shadow-sm shadow-black mb-2 p-5 text-white">
+          <h1 className="uppercase font-medium">Yelp Restaurants Search</h1>
+        </div>
+        <RouterProvider router={router} />
+      </div>
+  )
 }
 
-export default App;
+export default App
